@@ -1,4 +1,4 @@
-# Countdown Clock
- _A Pen created at CodePen.io. Original URL: [https://codepen.io/legendzhuzcq/pen/yWmMvM](https://codepen.io/legendzhuzcq/pen/yWmMvM).
+# Potty Time Countdown Clock
+This is a simple webpage to remind me if I should take my dog for a potty time
 
  

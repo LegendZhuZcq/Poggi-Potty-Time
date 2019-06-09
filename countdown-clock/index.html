@@ -27,10 +27,9 @@ body {
   position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -125px;
+    margin-top: -250px;
     margin-left: -300px;
     width: 600px;
-    height: 250px;
 }
 
 h1 {
@@ -50,16 +49,23 @@ li span {
   display: block;
   font-size: 4.5rem;
 }
+
+#shiba{
+  width: 200px;
+  margin-bottom: -20 px
+}
+
 </style>
 
 <div class="container">
+
     <h1 id="head">Time since Poggie's last potty:</h1>
     <ul>
-      <li><span id="days"></span>days</li>
       <li><span id="hours"></span>Hours</li>
       <li><span id="minutes"></span>Minutes</li>
       <li><span id="seconds"></span>Seconds</li>
     </ul>
+    <img id="shiba" src = "shiba.png" onclick="reset()"/>
     <h1 id="reset"  onclick="reset()">Poggie just got his potty done!</h1>
   </div>
 </body>
@@ -76,7 +82,6 @@ let countUp= new Date().getTime(),
       let now = new Date().getTime(),
           distance = now - countUp;
 
-      document.getElementById('days').innerText = Math.floor(distance / (day)),
         document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
         document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
         document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
@@ -85,7 +90,7 @@ let countUp= new Date().getTime(),
     }, second)
 
 function reset(){
-    countUp= new Date().getTime();
+    if(confirm("Do you want to reset the timer?")){countUp= new Date().getTime();}
 }
 </script>
 </html>

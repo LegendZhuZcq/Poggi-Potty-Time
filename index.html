@@ -12,9 +12,6 @@
 #reset{
   font-size: 2.5rem;
   font-weight: normal;
-  padding:20px;
-  border:#333;
-  border-style: solid;
 }
 
 body {
@@ -55,6 +52,43 @@ li span {
   margin-bottom: -20 px
 }
 
+button {
+  position: relative;
+  background-color: #ffd54f;
+  border: none;
+  font-size: 2.5rem;
+  border-style: solid;
+  color: black;
+  padding: 30px;
+  width: 100px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
 </style>
 
 <div class="container">
@@ -66,6 +100,8 @@ li span {
       <li><span id="seconds"></span>Seconds</li>
     </ul>
     <img id="shiba" src = "shiba.png" onclick="reset()"/>
+
+    <div><button onclick="addTimer()">+</button>  <button onclick="reduceTimer()">-</button> </div>
     <h1 id="reset"  onclick="reset()">Poggie just got his potty done!</h1>
   </div>
 </body>
@@ -92,5 +128,15 @@ let countUp= new Date().getTime(),
 function reset(){
     if(confirm("Do you want to reset the timer?")){countUp= new Date().getTime();}
 }
+function addTimer(){
+  countUp -= 60000;
+}
+
+function reduceTimer(){
+
+  countUp += 60000;
+}
+
+
 </script>
 </html>
